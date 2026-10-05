@@ -1,0 +1,27 @@
+## Interface: 120100
+## Title: Azeroth Guidebook
+## Notes: Multi-source in-game Retail PvE guide reference with Wowhead, Icy Veins, and U.GG data.
+## Author: Amar / ChatGPT
+## Version: 3.16.0
+## SavedVariables: AzerothGuidebookDB
+## IconTexture: Interface\AddOns\AzerothGuidebook\Media\AzerothGuidebookIcon_128
+## AddonCompartmentFunc: AzerothGuidebook_OnAddonCompartmentClick
+
+Data.lua
+GuideBiS.lua
+GuideConsumables.lua
+GuideEnchants.lua
+GuideStats.lua
+GuideRotations.lua
+GuideMultiSource.lua
+GuideIcyRotations.lua
+GuideBuilds.lua
+GuideRefreshOverrides.lua
+CompanionStatus.generated.lua
+SourceRefreshState.generated.lua
+Talents.lua
+Character.lua
+Core.lua
+MultiSource.lua
+SourceRefresh.lua
+UI.lua
