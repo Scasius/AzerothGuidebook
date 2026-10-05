@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build outputs
+*.exe
+*.msi
+*.log
+dist/
+build/
+
+# Local test artifacts
+*_Candidate.zip
+*_TestKit.zip
+*_ReleaseKit.zip
