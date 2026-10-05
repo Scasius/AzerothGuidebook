@@ -1,5 +1,7 @@
 # Azeroth Guidebook
 
+<p align="center"><img src="assets/AzerothGuidebook_Logo.png" alt="Azeroth Guidebook" width="260"></p>
+
 **Azeroth Guidebook** is a World of Warcraft Retail PvE guide companion that brings reviewed guide information, source-aware character auditing, and activity-specific setup management directly into the game.
 
 Current public versions:
