@@ -1,0 +1,10 @@
+Azeroth Guidebook
+Copyright (c) 2026 Scasius. All rights reserved.
+
+Permission is granted to download and use the Azeroth Guidebook software for its intended personal use with World of Warcraft, subject to applicable platform and game rules.
+
+Except where expressly permitted in writing by the copyright holder, you may not sell, sublicense, redistribute modified versions, relicense, or claim authorship of the original Azeroth Guidebook source code, companion software, branding, or original project assets.
+
+This notice applies only to original Azeroth Guidebook code and assets. It does not claim ownership of World of Warcraft, Blizzard Entertainment assets, third-party trademarks, or third-party guide content. Those remain the property of their respective owners.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
