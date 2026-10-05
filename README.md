@@ -23,6 +23,17 @@ Current public versions:
 - Source selection across Wowhead, Icy Veins, and U.GG
 - Optional one-click source refresh and refresh-change history through the Windows Companion
 
+## Repository layout
+
+- `addon/AzerothGuidebook/` — addon source for v3.16.0
+- `addon/generated/` — compressed generated runtime data used when reconstructing a source checkout
+- `companion/` — companion release/source information
+- `docs/` — companion and project documentation
+- `CHANGELOG.md` — public release highlights
+- `SECURITY.md` — trust, download, and installer information
+
+The official addon release ZIP contains all runtime files in expanded form. See [addon source notes](addon/README.md).
+
 ## Guide sources
 
 Azeroth Guidebook can present reviewed information from:
@@ -37,7 +48,7 @@ Azeroth Guidebook is an independent project and is not affiliated with or endors
 
 ## Addon installation
 
-The addon is distributed through CurseForge.
+The primary addon distribution is CurseForge.
 
 For a manual installation, the resulting folder must be:
 
@@ -60,15 +71,25 @@ The optional **Azeroth Guidebook Companion** enables:
 - Refresh All Sources
 - refresh notifications
 - recent refresh history
-- domain-level “What’s New Since Last Refresh?” comparisons when the required before/after snapshots are available
+- domain-level **What's New Since Last Refresh?** comparisons when the required before/after snapshots are available
 
-Download the companion from this repository's **Releases** page:
+Official Companion v1.1.0 release:
 
-https://github.com/Scasius/AzerothGuidebook/releases
+https://github.com/Scasius/AzerothGuidebook/releases/tag/companion-v1.1.0
 
 See [Companion installation and safety notes](docs/COMPANION.md).
 
-## Current release
+### Companion v1.1.0 checksums
+
+Installer:
+
+`e3533fd3b20bb78a227ea1ee10f99caecb32f0ad67544c863173712515ffd337`
+
+Source package:
+
+`aaa981043026bbe80efd1660083512194ae1fb44424278e302c00e06071ddd68`
+
+## Current addon release
 
 ### Azeroth Guidebook v3.16.0
 
@@ -76,9 +97,9 @@ v3.16.0 adds specialization-specific Activity Profiles for **Raid**, **Mythic+**
 
 The release also includes the official Azeroth Guidebook blue-and-gold compass branding for the in-game minimap launcher and AddOn Compartment.
 
-### Companion v1.1.0
+Current production ZIP SHA-256:
 
-Companion v1.1.0 is the validated public Windows companion paired with v3.16.0.
+`e75148378f99019b1d659b0ddadb1a1b1677ec511027d9f46c0aec0b92ce4f98`
 
 ## License
 
