@@ -4,6 +4,8 @@
 
 **Azeroth Guidebook** is a World of Warcraft Retail PvE guide companion that brings reviewed guide information, source-aware character auditing, and activity-specific setup management directly into the game.
 
+[CurseForge](https://www.curseforge.com/wow/addons/azeroth-guidebook) · [Addon v3.16.0](https://github.com/Scasius/AzerothGuidebook/releases/tag/addon-v3.16.0) · [Companion v1.1.0](https://github.com/Scasius/AzerothGuidebook/releases/tag/companion-v1.1.0) · [Report an issue](https://github.com/Scasius/AzerothGuidebook/issues)
+
 Current public versions:
 
 - Addon: **v3.16.0**
@@ -86,6 +88,12 @@ Companion v1.1.0 is the live-validated public Windows companion paired with v3.1
 Installer SHA-256:
 
 `e3533fd3b20bb78a227ea1ee10f99caecb32f0ad67544c863173712515ffd337`
+
+## Support and feedback
+
+For bugs, unexpected behavior, or feature requests, use [GitHub Issues](https://github.com/Scasius/AzerothGuidebook/issues). The issue forms ask for the addon/companion version, affected class/spec, selected guide source/context, reproduction steps, and any relevant Lua error or companion log details.
+
+Do not include account credentials, API keys, private account data, or other secrets in public issues. See [SECURITY.md](SECURITY.md) for trust and security guidance.
 
 ## License
 
