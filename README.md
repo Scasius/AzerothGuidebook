@@ -63,17 +63,29 @@ The current public Windows companion is **v1.1.0**:
 
 See [docs/COMPANION.md](docs/COMPANION.md) for installation, uninstall, and safety notes.
 
-## Current release
+## Current releases
 
 ### Azeroth Guidebook v3.16.0
+
+[GitHub release](https://github.com/Scasius/AzerothGuidebook/releases/tag/addon-v3.16.0)
 
 v3.16.0 adds specialization-specific Activity Profiles for **Raid**, **Mythic+**, and **Delves**. Profiles remember the exact guide configuration selected by the player, including source choices, talent context/build, U.GG context, gear-set context, and rotation context/preset.
 
 The release also includes the official Azeroth Guidebook blue-and-gold compass branding for the in-game minimap launcher and AddOn Compartment.
 
+Release ZIP SHA-256:
+
+`e75148378f99019b1d659b0ddadb1a1b1677ec511027d9f46c0aec0b92ce4f98`
+
 ### Companion v1.1.0
 
+[GitHub release](https://github.com/Scasius/AzerothGuidebook/releases/tag/companion-v1.1.0)
+
 Companion v1.1.0 is the live-validated public Windows companion paired with v3.16.0.
+
+Installer SHA-256:
+
+`e3533fd3b20bb78a227ea1ee10f99caecb32f0ad67544c863173712515ffd337`
 
 ## License
 
