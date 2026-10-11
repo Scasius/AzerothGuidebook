@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "pack_id": "ugg-1473-bundled-seed",
+  "source_id": "ugg",
+  "spec_id": 1473,
+  "review_state": "validated",
+  "generated_at": "2026-10-02T14:36:46Z",
+  "baseline_addon_version": "3.12.0",
+  "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "lua_chunk": "",
+  "seed_only": true
+}

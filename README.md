@@ -25,16 +25,14 @@ Current public versions:
 
 ## Repository layout
 
-- `addon/AzerothGuidebook/` — current addon source
-- `companion/source/` — current companion source
-- `docs/` — installation and project documentation
-- `branding/` — public Azeroth Guidebook branding assets
+- `addon/AzerothGuidebook/` - current addon source for v3.16.0
+- `companion/source/` - current Windows companion source for v1.1.0
+- `docs/` - installation and project documentation
+- `branding/` - public project branding assets
 
 ## Guide sources
 
-Azeroth Guidebook can present reviewed information from Wowhead, Icy Veins, and U.GG.
-
-U.GG data is presented as **observed player data**, not as editorial Best-in-Slot recommendations.
+Azeroth Guidebook can present reviewed information from Wowhead, Icy Veins, and U.GG. U.GG data is presented as **observed player data**, not as editorial Best-in-Slot recommendations.
 
 Azeroth Guidebook is an independent project and is not affiliated with or endorsed by Blizzard Entertainment, Wowhead, Icy Veins, or U.GG. World of Warcraft and related names are trademarks of Blizzard Entertainment. Third-party names and content remain the property of their respective owners.
 
@@ -46,28 +44,17 @@ For a manual installation, the resulting folder must be:
 
 `World of Warcraft/_retail_/Interface/AddOns/AzerothGuidebook/`
 
-Open the addon in game with:
-
-- the minimap compass icon
-- the AddOn Compartment
-- `/agb`
+Open the addon in game with the minimap compass icon, the AddOn Compartment, or `/agb`.
 
 ## Optional Windows Companion
 
 The addon works without the companion using its bundled reviewed data.
 
-The optional **Azeroth Guidebook Companion** enables:
-
-- Refresh Current Source
-- Refresh Current Spec
-- Refresh All Sources
-- refresh notifications
-- recent refresh history
-- domain-level “What’s New Since Last Refresh?” comparisons when the required before/after snapshots are available
+The optional **Azeroth Guidebook Companion** enables one-click source/spec/all-source refresh, notifications, recent refresh history, and domain-level “What’s New Since Last Refresh?” comparisons when retained snapshots are available.
 
 Download the companion from this repository's **Releases** page.
 
-See [Companion installation and safety notes](docs/COMPANION.md).
+See `docs/COMPANION.md` for installation and safety notes.
 
 ## Current release
 
@@ -83,6 +70,6 @@ Companion v1.1.0 is the validated public Windows companion paired with v3.16.0.
 
 ## License
 
-The original Azeroth Guidebook code and project assets are distributed under an **All Rights Reserved** license. See [LICENSE.txt](LICENSE.txt).
+The original Azeroth Guidebook code and project assets are distributed under an **All Rights Reserved** license. See `LICENSE.txt`.
 
 This license does not claim ownership of Blizzard Entertainment assets, third-party trademarks, or third-party guide content.

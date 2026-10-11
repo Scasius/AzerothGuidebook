@@ -315,3 +315,4 @@ function AGB:OpenSourceRefreshChangedDomain(pack, domain)
     self:RefreshUI()
     return true
 end
+

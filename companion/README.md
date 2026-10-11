@@ -1,20 +1,59 @@
-# Windows Companion
+# Azeroth Guidebook Companion source
 
-Current public companion: **v1.1.0**
+The public companion is a self-contained Go executable. End-user PCs do not require Python, Playwright, PowerShell scripts, or browser automation.
 
-The companion is optional. Azeroth Guidebook works without it using bundled reviewed guide data.
+Build order:
+1. Build `./companion` for `windows/amd64` as `AzerothGuidebookCompanion.exe` with the Windows GUI subsystem.
+2. Copy that executable to `setup/payload/AzerothGuidebookCompanion.exe`.
+3. Build `./setup` for `windows/amd64` as `AzerothGuidebookCompanionSetup.exe`.
 
-The complete validated source package and Windows installer are published on the companion release:
+The setup program embeds the companion payload, installs it per-user under `%LOCALAPPDATA%\\AzerothGuidebook\\Companion`, registers the current-user startup entry and Windows uninstall entry, and starts the companion immediately.
 
-https://github.com/Scasius/AzerothGuidebook/releases/tag/companion-v1.1.0
+For a public release with a hosted validated feed, inject the stable manifest URL at build time without changing source:
 
-Release assets:
+`-X main.defaultFeedURL=https://<host>/manifest.json`
 
-- `AzerothGuidebookCompanionSetup_v1.1.0.exe`
-- `AzerothGuidebookCompanion_Source_v1.1.0.zip`
+A per-install `feed_url` in `config.json` still overrides the compiled default when explicitly configured.
 
-Installer SHA-256:
 
-`e3533fd3b20bb78a227ea1ee10f99caecb32f0ad67544c863173712515ffd337`
+## 1.1.0
 
-See [Companion documentation](../docs/COMPANION.md) for installation, uninstall, refresh behavior, and safety notes.
+- Production promotion of the live-validated v1.1.0-rc1 code; runtime behavior is unchanged.
+- Adds schema-v2 refresh history used by Azeroth Guidebook v3.15.0 **What's New Since Last Refresh?**.
+- Retains the newest five completed refresh runs in `state.json` and `SourceRefreshState.generated.lua`.
+- Compares validated before/after Lua source-pack snapshots across Talents, BiS/Gear, Consumables, Enchants/Gems, Stats, and Rotation.
+- Separates recommendation changes from source-date-only updates.
+- Produces conservative counts for changed talent builds, gear slots, and consumable additions/removals when the pack structure exposes them.
+- Fails closed when an older local fingerprint exists without its corresponding Lua snapshot.
+- Preserves v1.0.0-rc5 Windows lifecycle behavior, native process management, protocol 1 compatibility, validation, hashing, and atomic writes.
+
+
+## 1.0.0-rc5
+
+- Replaced the installer/uninstaller dependency on `tasklist.exe` and `taskkill.exe` after live rc4 testing under Norton CyberCapture produced `ERROR: The user name or password is incorrect` and could leave the companion running.
+- rc5 asks the companion to stop cleanly through a local `stop.request` file first, then falls back to direct native Windows process enumeration/termination through the Toolhelp/Kernel32 APIs if an older or unresponsive build is still running.
+- Companion lock validation now uses the same native Windows process enumeration instead of `tasklist.exe`, avoiding the same security-product interception path during startup/reinstall.
+- Uninstall still fails closed: the Windows Installed Apps entry is retained unless the companion is confirmed stopped and the addon `not_installed` status is written and verified.
+- Preserves all rc4 status-reset hardening, rc3 Installed Apps registration fixes, and rc2 refresh/lifecycle behavior.
+
+## 1.0.0-rc4
+
+- Hardened Windows uninstall after live rc3 testing showed Installed Apps could remove the registration while WoW still saw a fresh `running` heartbeat.
+- Uninstall now removes the startup hook first, stops `AzerothGuidebookCompanion.exe` and verifies the process has exited, removes the stale lock, and only then resets `CompanionStatus.generated.lua`.
+- The `not_installed` status write is now verified on disk. If the configured addon path is unavailable, uninstall falls back to normal addon discovery instead of silently skipping the reset.
+- The Windows Installed Apps registration is removed only after shutdown and status reset both succeed, so a partial uninstall remains retryable instead of falsely reporting success.
+- Preserves all rc3 Installed Apps registration fixes and all rc2 refresh/lifecycle behavior.
+
+## 1.0.0-rc3
+
+- Fixed Windows **Installed apps** registration: every uninstall-metadata registry write is now checked, the 64-bit current-user uninstall view is used explicitly, and setup verifies `DisplayName`, `DisplayVersion`, and `UninstallString` before reporting success.
+- Added `DisplayIcon`, `InstallDate`, `QuietUninstallString`, and explicit non-system app metadata so Windows Settings can present the companion consistently.
+- A failed uninstall-registration step now rolls back the startup entry and reports setup failure instead of leaving a running companion with no normal uninstall path.
+- Preserves all rc2 lifecycle/heartbeat fixes and request-completion diagnostics.
+
+## 1.0.0-rc2
+
+- Fixed reinstall/upgrade startup when setup force-stops an existing companion: setup now removes the orphaned lock before launching the replacement.
+- Setup only reports Ready after it sees a heartbeat generated by the newly launched rc2 process, so a stale prior heartbeat can no longer produce a false-positive Ready state.
+- The companion can recover immediately from a fresh lock whose recorded process no longer exists.
+- Added explicit request-completion and notification-launch diagnostics to `companion.log`.
