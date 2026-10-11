@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest an improvement to Azeroth Guidebook or its Companion
+title: "[Feature]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are welcome. Describe the player problem first, then the behavior you would like to see.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Talents
+        - Rotation
+        - Gear / BiS
+        - Consumables
+        - Enchants & Gems
+        - Stats
+        - My Character
+        - Character Action Plan
+        - Activity Profiles
+        - Source Refresh / Companion
+        - UI / Navigation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What is difficult, missing, repetitive, or unclear today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe what you would like Azeroth Guidebook to do.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Include source/activity/spec examples or screenshots when they help explain the request.
