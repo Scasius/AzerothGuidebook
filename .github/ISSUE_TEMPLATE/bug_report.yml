@@ -1,0 +1,81 @@
+name: Bug report
+description: Report a reproducible Azeroth Guidebook or Companion problem
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please include enough detail for the issue to be reproduced.
+
+  - type: input
+    id: addon-version
+    attributes:
+      label: Azeroth Guidebook version
+      placeholder: "Example: 3.16.0"
+    validations:
+      required: true
+
+  - type: input
+    id: companion-version
+    attributes:
+      label: Companion version
+      description: Leave blank if the Windows Companion is not installed.
+      placeholder: "Example: 1.1.0"
+
+  - type: input
+    id: wow-version
+    attributes:
+      label: World of Warcraft Retail version
+      placeholder: "Example: 12.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: character-context
+    attributes:
+      label: Class / specialization
+      placeholder: "Example: Shaman / Elemental"
+
+  - type: input
+    id: guide-context
+    attributes:
+      label: Guide source / activity context
+      description: Include the affected source and activity/build context when relevant.
+      placeholder: "Example: Icy Veins / Mythic+ / Stormbringer"
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open...
+        2. Select...
+        3. Click...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Lua error / companion log / screenshots
+      description: Paste relevant error text or log excerpts and attach screenshots if useful. Remove private information first.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I reproduced this on the version listed above.
+          required: true
+        - label: I removed credentials, API keys, private account data, and other secrets from anything I attached.
+          required: true
