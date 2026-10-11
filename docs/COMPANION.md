@@ -1,31 +1,84 @@
 # Azeroth Guidebook Companion
 
-The companion is optional. Azeroth Guidebook works with its bundled reviewed data without it.
+Current public companion: **v1.1.0**
 
-## v3.16.0 compatibility
+The companion is optional. Azeroth Guidebook works normally with its bundled reviewed guide data without any external program.
 
-Azeroth Guidebook v3.16.0 adds in-addon Activity Profiles only. **Companion v1.1.0-rc1 remains the accepted companion baseline**; no companion protocol, refresh-history format, installation behavior, or source-pack validation changes are required for v3.16.0.
+## What the companion enables
 
+With the companion installed, the in-game **Sources** tab can perform:
 
-## CurseForge users
+- **Refresh Current Source**
+- **Refresh Current Spec**
+- **Refresh All Sources**
+- Windows completion notifications
+- recent refresh history
+- “What’s New Since Last Refresh?” domain-level change summaries when retained snapshots are available
 
-1. Install **Azeroth Guidebook** through CurseForge.
-2. Download the current companion installer (`AzerothGuidebookCompanionSetup_v1.1.0-rc1.exe`) from the companion link on the CurseForge project page.
-3. Run the installer once. Administrator rights are not required.
-4. Launch/reload WoW. The Sources tab should show **Companion: Ready | v1.1.0-rc1**.
-5. From then on, use only **Refresh Current Source**, **Refresh Current Spec**, or **Refresh All Sources** in-game.
+The companion runs outside World of Warcraft because WoW addons cannot make arbitrary web requests.
 
-## v1.1.0 refresh history
+## Download
 
-Azeroth Guidebook v3.15.0 adds Refresh Change Intelligence. Companion v1.1.0-rc1 is the accepted companion baseline for Azeroth Guidebook v3.15.0. It preserves all validated v1.0.0-rc5 install/startup/uninstall behavior and adds schema-v2 local refresh history. It retains the last five completed runs and compares validated source-pack snapshots by guide domain, separating recommendation changes from source-date-only updates.
+Use the official GitHub release:
 
-The companion still accepts only validated packs and still writes non-destructive overrides. If a legacy local pack has no retained pre-refresh Lua snapshot, detailed diffing fails closed and the addon reports that the old baseline is unavailable instead of guessing.
+[Azeroth Guidebook Companion v1.1.0](https://github.com/Scasius/AzerothGuidebook/releases/tag/companion-v1.1.0)
 
+Installer:
 
-The companion installs per-user under `%LOCALAPPDATA%\AzerothGuidebook\Companion`, starts automatically at Windows logon, and appears in Windows **Installed apps**. CurseForge addon updates do not remove it.
+`AzerothGuidebookCompanionSetup_v1.1.0.exe`
 
-The previously accepted companion baseline for Azeroth Guidebook v3.13.0 was **v1.0.0-rc5**; v3.15.0 advances the accepted baseline to **v1.1.0-rc1** after live refresh-history validation. Live validation confirmed installation, Windows Installed Apps registration, WoW Ready-state detection, all three refresh scopes, Windows completion notifications, reinstall/startup behavior, and uninstall. Uninstall immediately resets the addon-facing status to **Companion: Not installed** and disables the refresh buttons after `/reload`.
+Validated installer SHA-256:
 
-rc5 avoids `tasklist.exe` and `taskkill.exe` for process management. It first requests a clean companion shutdown through a local stop-request file and then uses native Windows process APIs only if an older or unresponsive process remains. This was added after Norton CyberCapture interfered with the external command path during live testing.
+`e3533fd3b20bb78a227ea1ee10f99caecb32f0ad67544c863173712515ffd337`
 
-The executable is currently unsigned. Windows SmartScreen or third-party reputation systems may warn or scan a new build. Code signing is optional and deferred for the current release.
+## Installation
+
+1. Install **Azeroth Guidebook v3.16.0** through CurseForge or manually.
+2. Download `AzerothGuidebookCompanionSetup_v1.1.0.exe` from the official GitHub release above.
+3. Run the installer. Administrator rights are not required for the normal per-user install.
+4. Launch or return to World of Warcraft.
+5. Type `/reload`.
+6. Open Azeroth Guidebook and go to **Sources**.
+7. Confirm the status shows **Companion: Ready | v1.1.0**.
+
+The companion installs per-user under:
+
+`%LOCALAPPDATA%\AzerothGuidebook\Companion`
+
+It registers for startup at Windows logon and appears in **Windows Settings > Apps > Installed apps**.
+
+## Uninstall
+
+Uninstall **Azeroth Guidebook Companion** from Windows **Installed apps**.
+
+After uninstalling, use `/reload` in WoW. Azeroth Guidebook should immediately report **Companion: Not installed**, with refresh buttons disabled. The addon continues to work from bundled data.
+
+## Refresh-history behavior
+
+Companion v1.1.0 includes the schema-v2 local refresh history used by Azeroth Guidebook's **What’s New Since Last Refresh?** feature. It retains the newest five completed runs and compares validated before/after source-pack snapshots across:
+
+- Talents
+- Gear/BiS
+- Consumables
+- Enchants & Gems
+- Stats
+- Rotation
+
+Recommendation changes are kept separate from source-date-only updates. When an older local fingerprint exists without the corresponding retained Lua snapshot, detailed comparison fails closed instead of guessing.
+
+## Safety model
+
+The companion accepts only Azeroth Guidebook's validated source-pack workflow and writes non-destructive local overrides. Invalid, ambiguous, partial, mismatched, or corrupt data does not replace accepted guide data.
+
+Normal users do not need to run PowerShell, Python, browser automation, or manual refresh scripts.
+
+The companion's process-management lifecycle uses native Windows process APIs rather than depending on `tasklist.exe` / `taskkill.exe`.
+
+## Antivirus / reputation
+
+The current installer is unsigned. Windows SmartScreen or third-party security/reputation products may inspect or warn about a newly published build. Only download the installer from the official Azeroth Guidebook GitHub release.
+
+## Current pairing
+
+- Addon: **Azeroth Guidebook v3.16.0**
+- Companion: **v1.1.0**
